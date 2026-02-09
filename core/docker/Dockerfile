@@ -30,7 +30,7 @@ RUN \
     tar -zxf /jdktarfile --strip 1 -C "${JAVA_HOME}" && \
     echo "Done"
 
-FROM redhat/ubi10 AS packages
+FROM --platform=$BUILDPLATFORM redhat/ubi10 AS packages
 
 RUN \
     set -xeuo pipefail && \
